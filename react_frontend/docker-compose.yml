@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  react-app:
+    image: react-frontend-image   # ← 这里指定镜像名
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80"
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+      - REACT_APP_API_URL=http://52.195.227.230:8020
