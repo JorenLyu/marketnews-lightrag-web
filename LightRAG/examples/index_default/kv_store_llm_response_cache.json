@@ -1,0 +1,31 @@
+{
+  "hybrid": {
+    "097a0f1559ab1e38fe7e6fe3f77a8b8f": {
+      "return": "{\"high_level_keywords\": [\"AMD\", \"Performance\", \"Technology\"], \"low_level_keywords\": [\"Graphics cards\", \"CPUs\", \"Benchmark results\", \"Stock prices\", \"Gaming performance\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "How is the AMD performance today?"
+    },
+    "96d309a15af421f18e618b11be3f7633": {
+      "return": "{\"high_level_keywords\": [\"AMD\", \"NVDA\", \"Comparative analysis\", \"Performance\"], \"low_level_keywords\": [\"Graphics cards\", \"Market share\", \"Gaming performance\", \"Price-to-performance ratio\", \"Technological advancements\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "AMD and NVDA who is better?"
+    },
+    "eacd3faaf3d1825696204be0421a5c18": {
+      "return": "{\"high_level_keywords\": [\"Identity\", \"Existence\", \"Self-awareness\"], \"low_level_keywords\": [\"Artificial intelligence\", \"Conversational agent\", \"Functionality\", \"Capabilities\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "what are you?"
+    }
+  }
+}

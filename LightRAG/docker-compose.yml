@@ -1,0 +1,16 @@
+version: "3.10"
+
+services:
+  lightrag:
+    build: .
+    ports:
+      - "${PORT:-8020}:8020"
+    volumes:
+      - ./examples/dickens:/app/examples/dickens
+      - ./data/inputs:/app/data/inputs
+      - ./config.ini:/app/config.ini
+    environment:
+      - RAG_DIR=/app/examples/dickens
+    env_file:
+      - .env
+    restart: unless-stopped
