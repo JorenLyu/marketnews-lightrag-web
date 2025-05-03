@@ -37,7 +37,7 @@ async def llm_model_func(
         prompt,
         system_prompt=system_prompt,
         history_messages=history_messages,
-        api_key="sk-91d0b59f25554251aa813ed756d79a6d",
+        api_key="sk-your_key",
         base_url="https://api.deepseek.com",
         **kwargs,
     )
