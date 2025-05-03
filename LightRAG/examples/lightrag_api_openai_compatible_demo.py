@@ -36,7 +36,7 @@ EMBEDDING_MAX_TOKEN_SIZE = int(os.environ.get("EMBEDDING_MAX_TOKEN_SIZE", 8192))
 print(f"EMBEDDING_MAX_TOKEN_SIZE: {EMBEDDING_MAX_TOKEN_SIZE}")
 BASE_URL = os.environ.get("BASE_URL", "https://api.openai.com/v1")
 print(f"BASE_URL: {BASE_URL}")
-PI_KEY = os.getenv("OPENAI_API_KEY")
+API_KEY = os.getenv("OPENAI_API_KEY")
 print(f"API_KEY: {API_KEY}")
 
 if not os.path.exists(WORKING_DIR):
@@ -92,6 +92,8 @@ async def init():
             max_token_size=EMBEDDING_MAX_TOKEN_SIZE,
             func=embedding_func,
         ),
+        chunk_token_size=300,           # 控制 chunk size
+        chunk_overlap_token_size=30     # 控制 chunk overlap
     )
 
     await rag.initialize_storages()
@@ -118,7 +120,7 @@ app = FastAPI(
 # Add CORS middleware here (after app definition)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "https://your-react-AWS-frontend-url.com"],
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -193,7 +195,7 @@ async def query_endpoint(request: QueryRequest):
             lambda: rag.query(
                 request.query,
                 param=QueryParam(
-                    mode=request.mode, only_need_context=request.only_need_context
+                    mode=request.mode, only_need_context=request.only_need_context, top_k=1
                 ),
             ),
         )

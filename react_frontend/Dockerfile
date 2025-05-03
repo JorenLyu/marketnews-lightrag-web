@@ -12,7 +12,7 @@ RUN yarn install
 # 复制全部代码
 COPY . .
 
-# 构建前端
+ENV NODE_ENV=production
 RUN yarn build
 
 # Production stage

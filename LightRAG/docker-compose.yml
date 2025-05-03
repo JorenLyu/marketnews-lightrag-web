@@ -3,6 +3,7 @@ version: "3.10"
 services:
   lightrag:
     build: .
+    image: jorenlyu0923/backend-lightrag:latest
     ports:
       - "${PORT:-8020}:8020"
     volumes:
